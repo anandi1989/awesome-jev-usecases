@@ -75,6 +75,7 @@ The fuzzy middle between brittle rules and expensive chat models — classify, r
 - Model & skill routing in agent harnesses — send simple work to the fast tier, hard work to the strong tier
 - Email fraud detection, résumé–job scoring, lead/ICP qualification
 - Natural-language Postgres `WHERE` clauses → [realZachi/pg-jev](https://github.com/realZachi/pg-jev)
+- `WHERE jev(...)` filters, `jev_prob` sorts, and `jev_choice` groups on a vanilla Postgres with no extension, judged client-side → [kylemclaren/jevql](https://github.com/kylemclaren/jevql)
 - Semantic spreadsheet formatting, Home Assistant automations → [AboveColin/HA-Jev](https://github.com/AboveColin/HA-Jev)
 
 ### 2. Bulk Map-Reduce Classification
