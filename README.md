@@ -12,7 +12,6 @@ Typical latency 70–500 ms · ~$0.042 / M input tokens · output tokens free.
 This repository is a living, searchable index of what the community has actually shipped in the first days after launch.  
 Every entry is grounded in public repos, measured results, or documented experiments.
 
-**Live site:** https://anandi1989.github.io/awesome-jev-usecases/  
 **Keywords:** Jev use cases · TypeSafe AI · System One model · Jev decision model · awesome Jev · Jev examples · Jev benchmarks · Jev agents · AI guardrails · LLM classification
 
 ---
