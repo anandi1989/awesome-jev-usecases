@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anandi1989.github.io/awesome-jev-usecases/sitemap.xml
