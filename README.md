@@ -9,7 +9,7 @@
 
 **Jev** is TypeSafe AI's first System One model — a decision engine that returns typed, calibrated judgments (Choice / Score / Noul) instead of free-form prose. It runs in 70–500 ms at ~$0.042 per million input tokens, and output tokens are free. In other words: fast enough to sit inside a game loop, cheap enough to run over millions of rows, and constrained enough that your code can branch on the answer without parsing JSON.
 
-Every entry below links to a public repo or a documented result. No star-count theater — the star column was dropped on purpose, because launch-week stars track attention, not rigor.
+Every entry below links to a public repo or a documented result.
 
 ---
 
@@ -167,4 +167,5 @@ MIT — for the index itself. Individual projects retain their own licenses.
 ---
 
 **Last updated:** 18 September 2026
-Jev is only a few days old. Expect this list to grow fast.
+
+*Jev is only a few days old. Expect this list to grow fast!!!*
