@@ -16,21 +16,6 @@ Every entry is grounded in public repos, measured results, or documented experim
 
 ---
 
-## Quick Start
-
-```bash
-# Clone
-git clone https://github.com/YOUR_USER/awesome-jev-usecases.git
-cd awesome-jev-usecases
-
-# Browse
-open README.md          # or just read below
-```
-
-No installation required. This is a curated knowledge index + links to working code.
-
----
-
 ## Why This Exists
 
 Within 72 hours of launch the community produced:
