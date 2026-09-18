@@ -143,19 +143,6 @@ This is a community index. PRs are welcome for:
 
 Please keep entries factual and link to source.
 
----
-
-## Naming Note
-
-Directory / repo name chosen for search discoverability around:
-- “Jev use cases”
-- “TypeSafe Jev”
-- “System One model”
-- “Jev decision model”
-- “awesome Jev”
-
----
-
 ## License
 
 MIT (for the index itself). Individual projects retain their own licenses.
