@@ -47,7 +47,7 @@ Three primitives is the whole API. That's the point. Questions in one request ar
 
 **TypeSafe (official):**
 - [TypeSafe AI](https://typesafe.ai) · [Introducing System One Models & Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev) (launch post)
-- [Docs](https://docs.typesafe.ai/introduction) · [API reference](https://docs.typesafe.ai/api) · [Primitives](https://docs.typesafe.ai/primitives) · [Patterns](https://docs.typesafe.ai/patterns) · [Models & pricing](https://docs.typesafe.ai/models)
+- [Docs](https://docs.typesafe.ai/introduction) · [API reference](https://docs.typesafe.ai/api) · [Primitives](https://docs.typesafe.ai/primitives) · [Patterns](https://docs.typesafe.ai/patterns) · [Models & pricing](https://docs.typesafe.ai/models) · [Demos](https://docs.typesafe.ai/demos)
 - [Playground](https://console.typesafe.ai/playground) · [Workflow evals](https://evals.typesafe.ai) · [Console](https://console.typesafe.ai)
 
 **Official SDKs & tools:**
@@ -102,6 +102,7 @@ Smart if-statements inside ordinary software: the fuzzy middle between brittle r
 - [AboveColin/HA-Jev](https://github.com/AboveColin/HA-Jev): Home Assistant integration; typed questions over entity state become sensors and automation actions. *Unique: a decision layer for household automations.*
 - [valentynkit/jev-commit](https://github.com/valentynkit/jev-commit): one Noul on whether a commit message matches the staged diff, plus debug-leftover and unmentioned-work checks. *Unique: pre-commit semantic lint instead of a full review.*
 - [valentynkit/jev.nvim](https://github.com/valentynkit/jev.nvim): plain-language buffer search; Treesitter splits the file into functions, Jev scores each, results land in quickfix. *Unique: semantic editor search with no embeddings.*
+- [DanRWilloughby/snifftest](https://github.com/DanRWilloughby/snifftest): prose linter that sniffs out AI-writing tells; countable regex rules run locally, judgment rules send one paragraph at a time to Jev. *Unique: one probability per rule, no general model, and it never rewrites your text.*
 
 ### 02 Bulk
 
@@ -178,6 +179,8 @@ Reproducing the *interface*, not the weights: proof that the decision-layer idea
 - [Mapika/decider](https://github.com/Mapika/decider): Qwen3.5-2B fine-tune that emits typed decisions
 - [NullPo-jp/PocketJev](https://github.com/NullPo-jp/PocketJev): on-device iPhone decisions (MLX + Qwen3-VL)
 
+**Watch:** the [Jev Reproductions Tracker](https://huggingface.co/spaces/multimodalart/jev-reproductions-tracker) on Hugging Face follows every open-weight reproduction attempt.
+
 ---
 
 ## Popular Blogs
@@ -185,14 +188,17 @@ Reproducing the *interface*, not the weights: proof that the decision-layer idea
 The writing worth reading, ranked by writer popularity × content uniqueness. SEO recaps are excluded by design.
 
 1. [Every: "TypeSafe's Jev Judged Everything I've Written in 0.7 Seconds"](https://every.to/also-true-for-humans/mini-vibe-check-typesafe-s-jev-judged-everything-i-ve-written-in-0-7-seconds): Mike Taylor. *The only independent hands-on measurement at launch.*
-2. [Flavio Copes: "A deep dive into Jev"](https://flaviocopes.com/jev/): *The most thorough API/SDK walkthrough.*
-3. [Archer Hume: "Jev's Architecture Unmasked"](https://archerhume.com/posts/jevs-architecture-unmasked/): *The only serious reverse-engineering attempt.*
-4. [Latent Space: "AINews: Jev, a System One model"](https://www.latent.space/p/ainews-jev-a-system-one-model-that): Swyx. *The launch, placed in context.*
-5. [The Register: "TypeSafe AI debuts model for machines that plays Doom"](https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711): Thomas Claburn. *The best independent news coverage.*
-6. [Kingy AI: "Jev review: the AI model that doesn't generate text"](https://kingy.ai/blog/typesafe-jev-review-the-ai-model-that-doesnt-generate-text/): *The skeptical counterweight.*
-7. [OrcaRouter: "Jev / TypeSafe System One: what we know"](https://www.orcarouter.ai/blog/jev-typesafe-system-one-what-we-know): *The claim-vs-evidence audit (the 75× vs 193× discrepancy).*
-8. [DataCamp: "System One Models: Jev"](https://www.datacamp.com/blog/system-one-models-jev): *The eval-table explainer.*
-9. [agentjournal.dev: "One judge call, or twelve dimension scores?"](https://agentjournal.dev/blog/llm-judge-vs-feature-extraction/): *An independent methodology measurement.*
+2. [TechCrunch: "A new kind of AI model from a ChatGPT inventor is thrilling developers"](https://techcrunch.com/2026/09/18/a-new-kind-of-ai-model-from-a-chatgpt-inventor-is-thrilling-developers/): *Mainstream validation with adoption quotes from Vercel and Bryo AI engineers.*
+3. [Flavio Copes: "A deep dive into Jev"](https://flaviocopes.com/jev/): *The most thorough API/SDK walkthrough.*
+4. [Archer Hume: "Jev's Architecture Unmasked"](https://archerhume.com/posts/jevs-architecture-unmasked/): *The only serious reverse-engineering attempt.*
+5. [Latent Space: "AINews: Jev, a System One model"](https://www.latent.space/p/ainews-jev-a-system-one-model-that): Swyx. *The launch, placed in context.*
+6. [The Register: "TypeSafe AI debuts model for machines that plays Doom"](https://www.theregister.com/ai-and-ml/2026/09/16/typesafe-ai-debuts-model-for-machines-that-plays-doom/5296711): Thomas Claburn. *The best independent news coverage.*
+7. [ts2.tech: "TypeSafe AI Raises $40 Million for Jev, but Its 445× Cost Claim Is Still Self-Tested"](https://ts2.tech/en/typesafe-ai-raises-40-million-for-jev-but-its-445x-cost-claim-is-still-self-tested/): *The skeptical audit of self-tested benchmarks, plus funding verification.*
+8. [Kingy AI: "Jev review: the AI model that doesn't generate text"](https://kingy.ai/blog/typesafe-jev-review-the-ai-model-that-doesnt-generate-text/): *The skeptical counterweight.*
+9. [dev.to (Valyu AI): "How to Use Jev: A practical guide"](https://dev.to/valyuai/how-to-use-jev-a-practical-guide-to-typesafes-system-one-model-g5e): *A hands-on tutorial with code and real numbers.*
+10. [OrcaRouter: "Jev / TypeSafe System One: what we know"](https://www.orcarouter.ai/blog/jev-typesafe-system-one-what-we-know): *The claim-vs-evidence audit (the 75× vs 193× discrepancy).*
+11. [DataCamp: "System One Models: Jev"](https://www.datacamp.com/blog/system-one-models-jev): *The eval-table explainer.*
+12. [agentjournal.dev: "One judge call, or twelve dimension scores?"](https://agentjournal.dev/blog/llm-judge-vs-feature-extraction/): *An independent methodology measurement.*
 
 ---
 
