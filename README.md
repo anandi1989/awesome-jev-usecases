@@ -77,6 +77,7 @@ The fuzzy middle between brittle rules and expensive chat models — classify, r
 - Natural-language Postgres `WHERE` clauses → [realZachi/pg-jev](https://github.com/realZachi/pg-jev)
 - `WHERE jev(...)` filters, `jev_prob` sorts, and `jev_choice` groups on a vanilla Postgres with no extension, judged client-side → [kylemclaren/jevql](https://github.com/kylemclaren/jevql)
 - Semantic spreadsheet formatting, Home Assistant automations → [AboveColin/HA-Jev](https://github.com/AboveColin/HA-Jev)
+- Commit message accuracy checks: one Noul on whether the message matches the staged diff, plus debug leftovers and unmentioned work → [valentynkit/jev-commit](https://github.com/valentynkit/jev-commit)
 
 ### 2. Bulk Map-Reduce Classification
 
@@ -86,13 +87,14 @@ Cheap judgment over giant corpora — the economics that make "run it on everyth
 - 98,000 listing classifications in ten minutes; YouTube comments, reviews, ad labeling, CMS tagging, log clustering
 - 50 M-row scoring enters the ~$20 range
 - Semantic features for classical ML — e.g. 2,000 wine notes → CatBoost numeric features at 1.77 RMSE
+- Sponsor-segment probability on YouTube's seek bar, scored from the caption track with no crowd database → [valentynkit/jev-skip](https://github.com/valentynkit/jev-skip) (77% of SponsorBlock's sponsor seconds caught over 23 videos at $0.0008/video)
 
 ### 3. Real-Time Loops & Games
 
 Action selection at game, UI, and market clock rates — perception and safety stay in code, Jev picks the move.
 
 - Official: Doom (~10 Hz, ~$7/hr), Wikiracing over high-cardinality link frontiers
-- Community: Subway Surfers ×50 parallel, StarCraft ([phyous/tsai-sc](https://github.com/phyous/tsai-sc)), Snake, Tetris, Pac-Man, 2048, stealth games
+- Community: Subway Surfers ×50 parallel, StarCraft ([phyous/tsai-sc](https://github.com/phyous/tsai-sc)), Snake, Tetris, Pac-Man, 2048, stealth games, Pokemon Red: code owns the route, Jev picks only at branches, faint predictions scored by Brier against RAM ([valentynkit/jev-plays-pokemon-red](https://github.com/valentynkit/jev-plays-pokemon-red))
 - Live conversation-state sensors; trolley-problem and moral-dilemma loops
 
 ### 4. Browser / Desktop / Mobile Agents
@@ -112,6 +114,7 @@ Make the agent loop cheaper, safer, and composable — Jev as the load balancer 
 - Steering agents instead of interrupting → [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden), [AbdelStark/bicameral](https://github.com/AbdelStark/bicameral)
 - Compaction, claim verification, prompt-injection screening, agent-failure diagnosis
 - MCP servers → [jkudish/jev-mcp](https://github.com/jkudish/jev-mcp), [itsmostafa/typesafe-mcp](https://github.com/itsmostafa/typesafe-mcp)
+- Blocking an unverified "done" in a coding agent: reads the transcript for evidence, spends one Jev call only when files changed with no passing check since, fails open on every error path → [valentynkit/jev-belay](https://github.com/valentynkit/jev-belay)
 
 ### 6. Search, Reranking & RAG
 
@@ -120,6 +123,7 @@ Relevance without embeddings — score each candidate with a Noul and sort by th
 - Rerank benchmarks vs Cohere / ZeroEntropy → [anessbelbati/jev-rerank-bench](https://github.com/anessbelbati/jev-rerank-bench) (nDCG@10 0.692 vs 0.691 — a tie)
 - Citation grounding: does the quoted context support, contradict, or stay silent on the claim?
 - Candidate selection for context windows; knowledge-graph entity alignment
+- Plain-language buffer search in Neovim: Treesitter splits the buffer into functions, Jev scores each one, answers land in quickfix ranked by probability → [valentynkit/jev.nvim](https://github.com/valentynkit/jev.nvim)
 
 ### 7. Security, Moderation & Safety
 
