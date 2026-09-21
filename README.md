@@ -136,6 +136,7 @@ Make the agent loop cheaper, safer, and composable: Jev as the load balancer abo
 - [jkudish/jev-mcp](https://github.com/jkudish/jev-mcp): MCP server exposing claim verification, content screening, and semantic ranking to coding agents. *Unique: verification + injection screening over MCP.*
 - [itsmostafa/typesafe-mcp](https://github.com/itsmostafa/typesafe-mcp): single-binary Go MCP for Claude and Codex. *Unique: zero-dependency agent integration.*
 - [AbdelStark/bicameral](https://github.com/AbdelStark/bicameral): Pi harness: the LLM writes, Jev supplies typed reflexes for policy, loop detection, and review. *Unique: a decision layer as the coding-harness reflex arc.*
+- [xinyao27/jevonian](https://github.com/xinyao27/jevonian): Local OpenAI/Anthropic/Responses-compatible proxy where one Jev call answers both the model route and the thinking level for its `jevonian/auto` model, after code has filtered candidates by protocol, context window, effort floor, and spent quota windows; a pinned model or explicit route skips Jev entirely, and each turn is logged with the serving model, reason, token usage, and estimated cost. *Unique: the decision is a cost-and-cache one, not just a capability one, and it stays auditable.* [self-reported]
 - Canonical examples: skill routing, context reduction, model routing.
 
 ### 06 Voice
