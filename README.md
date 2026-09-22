@@ -168,8 +168,6 @@ Rigor over reach. Everything here is tagged independent or self-reported.
 
 ### Independent evaluations
 
-- [Near Here: "Listing moderation on jev-1.13.0"]: 96% listing moderation vs Mistral Small 4 (84%) and Gemini Flash-Lite (86%). `[independent]`
-
 - [largitdata: "Jev System One Model open-source benchmark"](https://www.largitdata.com/en/blog/jev-system-one-model-open-source-benchmark/): multi-turn RAG routing — Gemma 4 31B vs Jev vs open alternatives; latency advantage for Jev. `[independent]`
 
 ### Benchmark repos
