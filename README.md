@@ -55,7 +55,7 @@ Three primitives is the whole API. That's the point. Questions in one request ar
 
 **Bypass the waitlist:** the [Vercel AI Gateway route](https://vercel.com/ai-gateway/models/jev) (`typesafe-ai/jev`).
 
-**Community clients:** [Elixir](https://github.com/nshkrdotcom/typesafe_sdk) · [Ruby](https://github.com/joshmn/typesafe-sdk) · [Rust](https://github.com/gilljon/typesafe-ai-rs) · [.NET](https://github.com/saibimajdi/typesafe-dotnet-sdk) · [Go](https://github.com/Gaurav-Gosain/jev-go) · [Scala/ZIO](https://github.com/jamesward/zio-typesafe-ai) · [PHP/Laravel](https://github.com/Butochnikov/typesafe-sdk-php)
+**Community clients:** [Elixir](https://github.com/nshkrdotcom/typesafe_sdk) · [Ruby](https://github.com/joshmn/typesafe-sdk) · [Rust](https://github.com/gilljon/typesafe-ai-rs) · [.NET](https://github.com/saibimajdi/typesafe-dotnet-sdk) · [Go](https://github.com/Gaurav-Gosain/jev-go) · [Scala/ZIO](https://github.com/jamesward/zio-typesafe-ai) · [PHP/Laravel](https://github.com/Butochnikov/typesafe-sdk-php) · [Python (jevclient)](https://github.com/AboveColin/jevclient) · [Rust (typesafe-rs)](https://github.com/AbdelStark/typesafe-rs) · [CLI (jev-cli)](https://github.com/jtsang4/jev-cli) · [Vercel AI SDK provider](https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai)
 
 ---
 
@@ -98,44 +98,55 @@ The long tail of unique use cases, grouped by decision shape. Each entry answers
 
 Smart if-statements inside ordinary software: the fuzzy middle between brittle rules and expensive chat models.
 
-- [kylemclaren/jevql](https://github.com/kylemclaren/jevql): `WHERE jev(...)` filters, `jev_prob` sorts, and `jev_choice` groups on a vanilla Postgres with no extension, judged client-side. *Unique: SQL filtering without a plugin or embeddings.*
-- [AboveColin/HA-Jev](https://github.com/AboveColin/HA-Jev): Home Assistant integration; typed questions over entity state become sensors and automation actions. *Unique: a decision layer for household automations.*
-- [valentynkit/jev-commit](https://github.com/valentynkit/jev-commit): one Noul on whether a commit message matches the staged diff, plus debug-leftover and unmentioned-work checks. *Unique: pre-commit semantic lint instead of a full review.*
-- [valentynkit/jev.nvim](https://github.com/valentynkit/jev.nvim): plain-language buffer search; Treesitter splits the file into functions, Jev scores each, results land in quickfix. *Unique: semantic editor search with no embeddings.*
-- [DanRWilloughby/snifftest](https://github.com/DanRWilloughby/snifftest): prose linter that sniffs out AI-writing tells; countable regex rules run locally, judgment rules send one paragraph at a time to Jev. *Unique: one probability per rule, no general model, and it never rewrites your text.*
+- [kylemclaren/jevql](https://github.com/kylemclaren/jevql): `WHERE jev(...)` filters, `jev_prob` sorts, and `jev_choice` groups on a vanilla Postgres with no extension, judged client-side. *Unique: SQL filtering without a plugin or embeddings.* [self-reported]
+- [AboveColin/HA-Jev](https://github.com/AboveColin/HA-Jev): Home Assistant integration; typed questions over entity state become sensors and automation actions. *Unique: a decision layer for household automations.* [self-reported]
+- [valentynkit/jev-commit](https://github.com/valentynkit/jev-commit): one Noul on whether a commit message matches the staged diff, plus debug-leftover and unmentioned-work checks. *Unique: pre-commit semantic lint instead of a full review.* [self-reported]
+- [valentynkit/jev.nvim](https://github.com/valentynkit/jev.nvim): plain-language buffer search; Treesitter splits the file into functions, Jev scores each, results land in quickfix. *Unique: semantic editor search with no embeddings.* [self-reported]
+- [DanRWilloughby/snifftest](https://github.com/DanRWilloughby/snifftest): prose linter that sniffs out AI-writing tells; countable regex rules run locally, judgment rules send one paragraph at a time to Jev. *Unique: one probability per rule, no general model, and it never rewrites your text.* [self-reported]
+- [zephel01/Jev-sample](https://github.com/zephel01/Jev-sample): question-shape demo: a 4-option Choice scores 48.3%, but decomposing into four precondition Nouls reaches 98.3%. *Unique: quantifies the atomic-question decomposition payoff.* [self-reported]
+- [mrnugget/jev-shell-history](https://github.com/mrnugget/jev-shell-history): Fish-style Zsh history autosuggestions ranked by Jev from the current input. *Unique: semantic shell-history ranking with no embeddings.* [self-reported]
+- [wustep/jev-playground](https://github.com/wustep/jev-playground): Jev chooses bounded musical attributes (enums only) while deterministic code renders sheet, audio, and MIDI. *Unique: enum-bounded music steering — the decision layer, not the notes, is the model's job.* [self-reported]
 
 ### 02 Bulk
 
 Cheap judgment over giant corpora: the economics that make "run it on everything" rational.
 
-- [valentynkit/jev-skip](https://github.com/valentynkit/jev-skip): sponsor-segment probability on YouTube's seek bar, scored from the caption track alone. *Unique: crowd-free sponsor detection (77% of SponsorBlock's sponsor seconds, ~$0.0008/video).*
-- [youkiti/tiab-review-plugin](https://github.com/youkiti/tiab-review-plugin): title/abstract screening for systematic reviews across labeled medical datasets. *Unique: evidence-synthesis triage at scale (95% recall @ 16,645 records).*
+- [valentynkit/jev-skip](https://github.com/valentynkit/jev-skip): sponsor-segment probability on YouTube's seek bar, scored from the caption track alone. *Unique: crowd-free sponsor detection (77% of SponsorBlock's sponsor seconds, ~$0.0008/video).* [self-reported]
+- [youkiti/tiab-review-plugin](https://github.com/youkiti/tiab-review-plugin): title/abstract screening for systematic reviews across labeled medical datasets. *Unique: evidence-synthesis triage at scale (95% recall @ 16,645 records).* [self-reported]
+- [kitze/Unclutter](https://github.com/kitze/Unclutter): per-element DOM classifier — keep/ad/cookie/promotion/newsletter/social/uncertain. *Unique: browser decluttering as a shipped job; no other entry covers UI hygiene.* [self-reported]
+- [dani1005/book-aurora](https://github.com/dani1005/book-aurora): scores a novel's passages across nine emotions plus overall intensity, visualized as an emotional aurora. *Unique: whole-book emotion scoring — every passage becomes a row of colour.* [self-reported]
+- [Tatuck/jev-boe-demo](https://github.com/Tatuck/jev-boe-demo): screens Spain's official gazette (BOE) daily, scoring public impact, classifying topics, and selecting summary paragraphs. *Unique: daily legal-gazette screening with impact scoring.* [self-reported]
 - Canonical examples: 1,018 papers → 24 topics for ~$0.08; 2,000 wine notes → CatBoost numeric features at 1.77 RMSE.
 
 ### 03 Realtime
 
 Action selection at game, UI, and market clock rates: perception and safety stay in code, Jev picks the move.
 
-- [phyous/tsai-sc](https://github.com/phyous/tsai-sc): StarCraft shareware harness with 421 structured decisions. *Unique: real-time strategy from structured game state.*
-- [valentynkit/jev-plays-pokemon-red](https://github.com/valentynkit/jev-plays-pokemon-red): code owns the route, Jev picks only at branches, and predictions are scored by Brier against RAM. *Unique: calibrated in-game decision logging.*
-- [RomanSlack/jev-drone](https://github.com/RomanSlack/jev-drone): camera-only quadrotor; Jev is advisory at ~2.5 Hz while safety stays in code at 50 Hz. *Unique: split-rate control (tactical vs safety loop).*
+- [phyous/tsai-sc](https://github.com/phyous/tsai-sc): StarCraft shareware harness with 421 structured decisions. *Unique: real-time strategy from structured game state.* [self-reported]
+- [valentynkit/jev-plays-pokemon-red](https://github.com/valentynkit/jev-plays-pokemon-red): code owns the route, Jev picks only at branches, and predictions are scored by Brier against RAM. *Unique: calibrated in-game decision logging.* [self-reported]
+- [RomanSlack/jev-drone](https://github.com/RomanSlack/jev-drone): camera-only quadrotor; Jev is advisory at ~2.5 Hz while safety stays in code at 50 Hz. *Unique: split-rate control (tactical vs safety loop).* [self-reported]
+- [sorrycc/typesafe-snake](https://github.com/sorrycc/typesafe-snake): Snake where Jev picks each move from structured game state. *Unique: the first linked implementation of a canonical realtime example.* [self-reported]
+- [Reisenbug/TerraBlind](https://github.com/Reisenbug/TerraBlind): a pre-launch Terraria tModLoader mod that added Jev to fight the bosses — one question every 200 ms, code turns the answer into keystrokes. *Unique: an established game mod adopting Jev as its boss-fight decision layer, plus a code-only fresh-world pipeline.* [self-reported]
 - Canonical examples: Doom (~10 Hz), Wikiracing, Snake, Tetris, Pac-Man, Subway Surfers ×50.
 
 ### 04 Verify
 
 Score, judge, and gate prompts, traces, tool calls, and claims: at a fraction of the LLM call you're protecting.
 
-- [valentynkit/jev-belay](https://github.com/valentynkit/jev-belay): blocks an unverified "done" in a coding agent; spends one Jev call only when files changed with no passing check since, and fails open on every error path. *Unique: evidence-gated task-completion guardrail.*
-- [kiarina/labs: safety judgment](https://github.com/kiarina/labs/tree/main/2026/09/17/typesafe-jev-safety-judgment): moderation plus shell-command safety checks. *Unique: strong non-English (Japanese) moderation: 36 misses vs OpenAI's 292 on 826 harmful texts.*
+- [valentynkit/jev-belay](https://github.com/valentynkit/jev-belay): blocks an unverified "done" in a coding agent; spends one Jev call only when files changed with no passing check since, and fails open on every error path. *Unique: evidence-gated task-completion guardrail.* [self-reported]
+- [kiarina/labs: safety judgment](https://github.com/kiarina/labs/tree/main/2026/09/17/typesafe-jev-safety-judgment): moderation plus shell-command safety checks. *Unique: strong non-English (Japanese) moderation: 36 misses vs OpenAI's 292 on 826 harmful texts.* [self-reported]
+- [teyhouse/jev-secret-detection](https://github.com/teyhouse/jev-secret-detection): secret/credential scanning in code and text. *Unique: a dedicated secret-detection decision, distinct from shell-command safety and agent guardrails.* [self-reported]
+- [Red5d/jev-cvss](https://github.com/Red5d/jev-cvss): extracts CVSS v3.0/v3.1/v4.0 metrics from vulnerability descriptions and scores deterministically. *Unique: structured CVSS extraction — Jev parses, code computes.* [self-reported]
 - Canonical examples: citation grounding, jailbreak and prompt-injection screening, pre-execution shell checks.
 
 ### 05 Harness
 
 Make the agent loop cheaper, safer, and composable: Jev as the load balancer above models, tools, and humans.
 
-- [jkudish/jev-mcp](https://github.com/jkudish/jev-mcp): MCP server exposing claim verification, content screening, and semantic ranking to coding agents. *Unique: verification + injection screening over MCP.*
-- [itsmostafa/typesafe-mcp](https://github.com/itsmostafa/typesafe-mcp): single-binary Go MCP for Claude and Codex. *Unique: zero-dependency agent integration.*
-- [AbdelStark/bicameral](https://github.com/AbdelStark/bicameral): Pi harness: the LLM writes, Jev supplies typed reflexes for policy, loop detection, and review. *Unique: a decision layer as the coding-harness reflex arc.*
+- [jkudish/jev-mcp](https://github.com/jkudish/jev-mcp): MCP server exposing claim verification, content screening, and semantic ranking to coding agents. *Unique: verification + injection screening over MCP.* [self-reported]
+- [itsmostafa/typesafe-mcp](https://github.com/itsmostafa/typesafe-mcp): single-binary Go MCP for Claude and Codex. *Unique: zero-dependency agent integration.* [self-reported]
+- [AbdelStark/bicameral](https://github.com/AbdelStark/bicameral): Pi harness: the LLM writes, Jev supplies typed reflexes for policy, loop detection, and review. *Unique: a decision layer as the coding-harness reflex arc.* [self-reported]
+- [jexp/neo4jev](https://github.com/jexp/neo4jev): navigates a Neo4j graph one relationship at a time via a classifier over neighbouring relationships. *Unique: graph traversal as a typed decision, hop by hop.* [self-reported]
 - [xinyao27/jevonian](https://github.com/xinyao27/jevonian): Local OpenAI/Anthropic/Responses-compatible proxy where one Jev call answers both the model route and the thinking level for its `jevonian/auto` model, after code has filtered candidates by protocol, context window, effort floor, and spent quota windows; a pinned model or explicit route skips Jev entirely, and each turn is logged with the serving model, reason, token usage, and estimated cost. *Unique: the decision is a cost-and-cache one, not just a capability one, and it stays auditable.* [self-reported]
 - Canonical examples: skill routing, context reduction, model routing.
 
@@ -157,19 +168,19 @@ Rigor over reach. Everything here is tagged independent or self-reported.
 
 ### Independent evaluations
 
-- [Every: "Mini-Vibe Check"](https://every.to/also-true-for-humans/mini-vibe-check-typesafe-s-jev-judged-everything-i-ve-written-in-0-7-seconds) (Mike Taylor): 777 judgments in <0.7 s (~$0.0032 each), 6-of-7 planted defects caught, ~25× faster than Claude Fable 5.1. `[independent]`
+- [Near Here: "Listing moderation on jev-1.13.0"]: 96% listing moderation vs Mistral Small 4 (84%) and Gemini Flash-Lite (86%). `[independent]`
 
-- [Archer Hume: "Architecture Unmasked"](https://archerhume.com/posts/jevs-architecture-unmasked/): 84.6% MMLU-Pro, ECE 0.0313. Third-party probe, not a TypeSafe figure. `[independent]`
+- [largitdata: "Jev System One Model open-source benchmark"](https://www.largitdata.com/en/blog/jev-system-one-model-open-source-benchmark/): multi-turn RAG routing — Gemma 4 31B vs Jev vs open alternatives; latency advantage for Jev. `[independent]`
 
 ### Benchmark repos
 
-- [Gaurav-Gosain/jev-sec-bench](https://github.com/Gaurav-Gosain/jev-sec-bench): blind prompt-injection & vulnerable-code detection: 96.5% accuracy, ECE 0.0588, 662 samples
-- [TokenTrim/jev-agent-failure-benchmark](https://github.com/TokenTrim/jev-agent-failure-benchmark): beat GPT-5.4 on every axis across 6,257 traces for $1.28
-- [anessbelbati/jev-rerank-bench](https://github.com/anessbelbati/jev-rerank-bench): nDCG@10 0.692 vs Cohere 0.691 (a tie, 14 datasets)
-- [anisselbd/jev-phishing-bench](https://github.com/anisselbd/jev-phishing-bench): 2,000 emails vs Claude Haiku 4.5
-- [iammrduncan/typesafe-ai-benchmark](https://github.com/iammrduncan/typesafe-ai-benchmark): Jev vs Qwen 3.8 27B on Cerebras
-- [vinilana/jev-eval-agent](https://github.com/vinilana/jev-eval-agent): public eval harness
-- [jmanhype/jev-dspy-lab](https://github.com/jmanhype/jev-dspy-lab): DSPy companion; calibration and confidence-gated abstention
+- [Gaurav-Gosain/jev-sec-bench](https://github.com/Gaurav-Gosain/jev-sec-bench): blind prompt-injection & vulnerable-code detection: 96.5% accuracy, ECE 0.0588, 662 samples [self-reported]
+- [TokenTrim/jev-agent-failure-benchmark](https://github.com/TokenTrim/jev-agent-failure-benchmark): beat GPT-5.4 on every axis across 6,257 traces for $1.28 [self-reported]
+- [anessbelbati/jev-rerank-bench](https://github.com/anessbelbati/jev-rerank-bench): nDCG@10 0.692 vs Cohere 0.691 (a tie, 14 datasets) [self-reported]
+- [anisselbd/jev-phishing-bench](https://github.com/anisselbd/jev-phishing-bench): 2,000 emails vs Claude Haiku 4.5 [self-reported]
+- [iammrduncan/typesafe-ai-benchmark](https://github.com/iammrduncan/typesafe-ai-benchmark): Jev vs Qwen 3.8 27B on Cerebras [self-reported]
+- [vinilana/jev-eval-agent](https://github.com/vinilana/jev-eval-agent): public eval harness [self-reported]
+- [jmanhype/jev-dspy-lab](https://github.com/jmanhype/jev-dspy-lab): DSPy companion; calibration and confidence-gated abstention [self-reported]
 
 ### Open re-implementations
 
@@ -179,6 +190,8 @@ Reproducing the *interface*, not the weights: proof that the decision-layer idea
 - [vinnylarouge/jevlike](https://github.com/vinnylarouge/jevlike): one-pass scorer; Doom, chess, and Wikispeedia demos
 - [Mapika/decider](https://github.com/Mapika/decider): Qwen3.5-2B fine-tune that emits typed decisions
 - [NullPo-jp/PocketJev](https://github.com/NullPo-jp/PocketJev): on-device iPhone decisions (MLX + Qwen3-VL)
+- [Laya](https://huggingface.co/convaiinnovations/laya): Apache-2.0 open alternative, 3 checkpoints, runs on a free Colab T4 (~30 ms vs ~302 ms, 0.590 vs 0.974 accuracy)
+- [com-kotobalabs/open-jev-deberta-v3-large](https://huggingface.co/com-kotobalabs/open-jev-deberta-v3-large): open reproduction on DeBERTa-v3-large (self-hostable)
 
 **Watch:** the [Jev Reproductions Tracker](https://huggingface.co/spaces/multimodalart/jev-reproductions-tracker) on Hugging Face follows every open-weight reproduction attempt.
 
@@ -200,6 +213,9 @@ The writing worth reading, ranked by writer popularity × content uniqueness. SE
 10. [OrcaRouter: "Jev / TypeSafe System One: what we know"](https://www.orcarouter.ai/blog/jev-typesafe-system-one-what-we-know): *The claim-vs-evidence audit (the 75× vs 193× discrepancy).*
 11. [DataCamp: "System One Models: Jev"](https://www.datacamp.com/blog/system-one-models-jev): *The eval-table explainer.*
 12. [agentjournal.dev: "One judge call, or twelve dimension scores?"](https://agentjournal.dev/blog/llm-judge-vs-feature-extraction/): *An independent methodology measurement.*
+13. [LangChain: "Building a harness with Jev"](https://www.langchain.com/blog/building-a-harness-with-jev): *A first-party harness guide from a major framework vendor.*
+14. X @CompleteSkeptic: "Jev launch announcement thread": Diogo Almeida. *Primary launch announcement (~25M views).*
+15. [Hacker News: "TypeSafe AI launch discussion thread"](https://news.ycombinator.com/item?id=49717558): *The richest technical critique with named commenters.*
 
 ---
 
@@ -230,6 +246,6 @@ MIT: for the index itself. Individual projects retain their own licenses.
 
 ---
 
-**Last updated:** 19 September 2026
+**Last updated:** 22 September 2026
 
 *Jev is only a few days old. Expect this list to grow fast!!!*
