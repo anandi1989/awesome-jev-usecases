@@ -148,6 +148,7 @@ Make the agent loop cheaper, safer, and composable: Jev as the load balancer abo
 - [AbdelStark/bicameral](https://github.com/AbdelStark/bicameral): Pi harness: the LLM writes, Jev supplies typed reflexes for policy, loop detection, and review. *Unique: a decision layer as the coding-harness reflex arc.* [self-reported]
 - [jexp/neo4jev](https://github.com/jexp/neo4jev): navigates a Neo4j graph one relationship at a time via a classifier over neighbouring relationships. *Unique: graph traversal as a typed decision, hop by hop.* [self-reported]
 - [xinyao27/jevonian](https://github.com/xinyao27/jevonian): Local OpenAI/Anthropic/Responses-compatible proxy where one Jev call answers both the model route and the thinking level for its `jevonian/auto` model, after code has filtered candidates by protocol, context window, effort floor, and spent quota windows; a pinned model or explicit route skips Jev entirely, and each turn is logged with the serving model, reason, token usage, and estimated cost. *Unique: the decision is a cost-and-cache one, not just a capability one, and it stays auditable.* [self-reported]
+- [suenot/codex-jev-router](https://github.com/suenot/codex-jev-router): Uses Jev Choice and Noul decisions on short task summaries to select the model and reasoning effort when Codex spawns a subagent. *Unique: installs an instruction-driven Codex subagent workflow with local confidence gates and backup/rollback.* [self-reported]
 - Canonical examples: skill routing, context reduction, model routing.
 
 ### 06 Voice
