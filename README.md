@@ -137,6 +137,7 @@ Score, judge, and gate prompts, traces, tool calls, and claims: at a fraction of
 - [kiarina/labs: safety judgment](https://github.com/kiarina/labs/tree/main/2026/09/17/typesafe-jev-safety-judgment): moderation plus shell-command safety checks. *Unique: strong non-English (Japanese) moderation: 36 misses vs OpenAI's 292 on 826 harmful texts.* [self-reported]
 - [teyhouse/jev-secret-detection](https://github.com/teyhouse/jev-secret-detection): secret/credential scanning in code and text. *Unique: a dedicated secret-detection decision, distinct from shell-command safety and agent guardrails.* [self-reported]
 - [Red5d/jev-cvss](https://github.com/Red5d/jev-cvss): extracts CVSS v3.0/v3.1/v4.0 metrics from vulnerability descriptions and scores deterministically. *Unique: structured CVSS extraction — Jev parses, code computes.* [self-reported]
+- [supercorp-ai/supercov](https://github.com/supercorp-ai/supercov): coverage, security and code quality for coding agents; Jev checks each source file so the agent knows what to fix first. *Unique: twelve named quality and twelve named security questions of every source file, each security check mapped to CWE classes, with files ranked for the agent next to their test coverage.* [self-reported]
 - Canonical examples: citation grounding, jailbreak and prompt-injection screening, pre-execution shell checks.
 
 ### 05 Harness
