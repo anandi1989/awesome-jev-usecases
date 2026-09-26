@@ -107,6 +107,7 @@ Smart if-statements inside ordinary software: the fuzzy middle between brittle r
 - [zephel01/Jev-sample](https://github.com/zephel01/Jev-sample): question-shape demo: a 4-option Choice scores 48.3%, but decomposing into four precondition Nouls reaches 98.3%. *Unique: quantifies the atomic-question decomposition payoff.* [self-reported]
 - [mrnugget/jev-shell-history](https://github.com/mrnugget/jev-shell-history): Fish-style Zsh history autosuggestions ranked by Jev from the current input. *Unique: semantic shell-history ranking with no embeddings.* [self-reported]
 - [wustep/jev-playground](https://github.com/wustep/jev-playground): Jev chooses bounded musical attributes (enums only) while deterministic code renders sheet, audio, and MIDI. *Unique: enum-bounded music steering — the decision layer, not the notes, is the model's job.* [self-reported]
+- [kylemclaren/jevpdf](https://github.com/kylemclaren/jevpdf): ask a PDF in your own words in the browser; pdf.js extracts lines locally, each line gets one Jev Noul (batched up to 16 lines per request with the page as context), and matching lines highlight page by page ranked by probability. *Unique: plain-language Ctrl+F for PDFs; Jev only sees extracted text, never the file.* [self-reported]
 
 ### 02 Bulk
 
