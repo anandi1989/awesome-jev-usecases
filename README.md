@@ -129,6 +129,7 @@ Action selection at game, UI, and market clock rates: perception and safety stay
 - [RomanSlack/jev-drone](https://github.com/RomanSlack/jev-drone): camera-only quadrotor; Jev is advisory at ~2.5 Hz while safety stays in code at 50 Hz. *Unique: split-rate control (tactical vs safety loop).* [self-reported]
 - [sorrycc/typesafe-snake](https://github.com/sorrycc/typesafe-snake): Snake where Jev picks each move from structured game state. *Unique: the first linked implementation of a canonical realtime example.* [self-reported]
 - [Reisenbug/TerraBlind](https://github.com/Reisenbug/TerraBlind): a pre-launch Terraria tModLoader mod that added Jev to fight the bosses — one question every 200 ms, code turns the answer into keystrokes. *Unique: an established game mod adopting Jev as its boss-fight decision layer, plus a code-only fresh-world pipeline.* [self-reported]
+- [cwdx/1-million-emojis](https://github.com/cwdx/1-million-emojis): shared 1,000 × 1,000 emoji canvas ([live](https://chriswijnia.com/lab/emoji)); after each human stroke, one Jev request answers a Choice over named (emoji, place) options beside it and a Noul on whether the stroke is an unfinished shape, and code finishes the shape above 0.7 or samples the pick from the probabilities. *Unique: Jev as a co-painter answering many humans in one realtime multiplayer canvas, not an agent playing alone.* [self-reported]
 - Canonical examples: Doom (~10 Hz), Wikiracing, Snake, Tetris, Pac-Man, Subway Surfers ×50.
 
 ### 04 Verify
