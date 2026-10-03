@@ -85,6 +85,8 @@ The "few upcoming": high rubric score but below the popularity cutoff. This tier
 | [droidrun/mobile-jev](https://github.com/droidrun/mobile-jev) | Android agent: Jev decides each tap | Uber route in **~21 s / 9 actions** |
 | [DevMortimer/pi-warden](https://github.com/DevMortimer/pi-warden) | Agent guardrails that steer instead of interrupt | **6 rule breaks → 0** across 150 paired runs |
 | [AnshChoudhary/typesafe-ai-firewall](https://github.com/AnshChoudhary/typesafe-ai-firewall) | Pre-execution firewall for agent tool calls: one Noul per hazard | **0%** hard negatives blocked vs **39.2%** with a single "is this dangerous?" prompt |
+| [moritzkremb/jev-voice-browser](https://github.com/moritzkremb/jev-voice-browser) | Voice control of a real browser: partial speech streams to one Jev request per update for intent and target; Playwright executes | Acts before the sentence ends — **34/34** live intents |
+| [AbdelStark/heist-one](https://github.com/AbdelStark/heist-one) | Stealth game where each guard's threat, suspicion, intent and attention come from batched Jev questions; code owns the 30 Hz sim | **12/12** live runs, **288** typed judgments, **0** fallbacks |
 
 > Every headline result above is self-reported by the project author. Treat them as launch-week proof-of-concept signal, not production case studies.
 
@@ -108,6 +110,8 @@ Smart if-statements inside ordinary software: the fuzzy middle between brittle r
 - [mrnugget/jev-shell-history](https://github.com/mrnugget/jev-shell-history): Fish-style Zsh history autosuggestions ranked by Jev from the current input. *Unique: semantic shell-history ranking with no embeddings.* [self-reported]
 - [wustep/jev-playground](https://github.com/wustep/jev-playground): Jev chooses bounded musical attributes (enums only) while deterministic code renders sheet, audio, and MIDI. *Unique: enum-bounded music steering — the decision layer, not the notes, is the model's job.* [self-reported]
 - [kylemclaren/jevpdf](https://github.com/kylemclaren/jevpdf): ask a PDF in your own words in the browser; pdf.js extracts lines locally, each line gets one Jev Noul (batched up to 16 lines per request with the page as context), and matching lines highlight page by page ranked by probability. *Unique: plain-language Ctrl+F for PDFs; Jev only sees extracted text, never the file.* [self-reported]
+- [asfarsadewa/human-compiler](https://github.com/asfarsadewa/human-compiler): a browser "compiler" for human language — a local lexer splits pasted text, then one Jev request (many Nouls, Choices and Scores) emits rustc-style diagnostics with codes, spans and severity, and code decides what fires. *Unique: the model supplies measurements only, so identical measurements produce identical diagnostics; mode profiles (corporate/manager/linkedin/academic/reddit/politician/teenager) are lint profiles with their own thresholds.* [self-reported]
+- Canonical examples (TypeSafe cookbook): insurance FNOL / claims triage, KYC & financial-crime checks, e-commerce listing normalization, returns approval, sales lead/ICP scoring, support-ticket triage — [official use-case map](https://docs.typesafe.ai/concepts/use-case-map).
 
 ### 02 Bulk
 
@@ -118,6 +122,8 @@ Cheap judgment over giant corpora: the economics that make "run it on everything
 - [kitze/Unclutter](https://github.com/kitze/Unclutter): per-element DOM classifier — keep/ad/cookie/promotion/newsletter/social/uncertain. *Unique: browser decluttering as a shipped job; no other entry covers UI hygiene.* [self-reported]
 - [dani1005/book-aurora](https://github.com/dani1005/book-aurora): scores a novel's passages across nine emotions plus overall intensity, visualized as an emotional aurora. *Unique: whole-book emotion scoring — every passage becomes a row of colour.* [self-reported]
 - [Tatuck/jev-boe-demo](https://github.com/Tatuck/jev-boe-demo): screens Spain's official gazette (BOE) daily, scoring public impact, classifying topics, and selecting summary paragraphs. *Unique: daily legal-gazette screening with impact scoring.* [self-reported]
+- [reachjalil/jevlogs](https://github.com/reachjalil/jevlogs): OpenTelemetry log triage — wraps an existing OTLP exporter, scores each log's diagnostic value (0–100), priority and actionable probability with Jev, and annotates records with `jev.*` attributes so low-value logs can skip a separate LLM-analysis branch. *Unique: observability log triage at the collector; only body/severity/service reach the model after redaction.* [self-reported]
+- [ChetasLua/jevmeter](https://github.com/ChetasLua/jevmeter): scores every sentence of a video with one Jev request per sentence across preset question sets (BS/SPIN/HOT-TAKE/HYPE), then renders a 16:9 edited video with meter, flags and scoreboard via ffmpeg. *Unique: end-to-end media pipeline (Whisper transcription + per-sentence Nouls + highlight selection + resumable cache).* [self-reported]
 - Canonical examples: 1,018 papers → 24 topics for ~$0.08; 2,000 wine notes → CatBoost numeric features at 1.77 RMSE.
 
 ### 03 Realtime
@@ -130,6 +136,8 @@ Action selection at game, UI, and market clock rates: perception and safety stay
 - [sorrycc/typesafe-snake](https://github.com/sorrycc/typesafe-snake): Snake where Jev picks each move from structured game state. *Unique: the first linked implementation of a canonical realtime example.* [self-reported]
 - [Reisenbug/TerraBlind](https://github.com/Reisenbug/TerraBlind): a pre-launch Terraria tModLoader mod that added Jev to fight the bosses — one question every 200 ms, code turns the answer into keystrokes. *Unique: an established game mod adopting Jev as its boss-fight decision layer, plus a code-only fresh-world pipeline.* [self-reported]
 - [cwdx/1-million-emojis](https://github.com/cwdx/1-million-emojis): shared 1,000 × 1,000 emoji canvas ([live](https://chriswijnia.com/lab/emoji)); after each human stroke, one Jev request answers a Choice over named (emoji, place) options beside it and a Noul on whether the stroke is an unfinished shape, and code finishes the shape above 0.7 or samples the pick from the probabilities. *Unique: Jev as a co-painter answering many humans in one realtime multiplayer canvas, not an agent playing alone.* [self-reported]
+- [asfarsadewa/werewolf](https://github.com/asfarsadewa/werewolf): Werewolf against seven villagers whose suspicions are calibrated Jev probabilities; each message is measured by one Jev request and every villager keeps a visible, updateable suspicion probability. *Unique: social-deduction belief state as typed probabilities; deterministic (seed + measured actions), ~750 authored lines, no generation.* [self-reported]
+- [lbotinelly/jev-little-airways](https://github.com/lbotinelly/jev-little-airways): a toy archipelago ATC sim where every in-flight call (continue/divert/hold, declare an emergency, give way, clearance, landing order) is a batched live Jev request every ~1.6 s (~150 ms answers), with runway exclusivity kept in deterministic code. *Unique: multi-agent realtime ATC with a live Jev monitor (raw request/response, latency, tokens, cost) and documented question-wording/confidence findings.* [self-reported]
 - Canonical examples: Doom (~10 Hz), Wikiracing, Snake, Tetris, Pac-Man, Subway Surfers ×50.
 
 ### 04 Verify
@@ -141,6 +149,8 @@ Score, judge, and gate prompts, traces, tool calls, and claims: at a fraction of
 - [teyhouse/jev-secret-detection](https://github.com/teyhouse/jev-secret-detection): secret/credential scanning in code and text. *Unique: a dedicated secret-detection decision, distinct from shell-command safety and agent guardrails.* [self-reported]
 - [Red5d/jev-cvss](https://github.com/Red5d/jev-cvss): extracts CVSS v3.0/v3.1/v4.0 metrics from vulnerability descriptions and scores deterministically. *Unique: structured CVSS extraction — Jev parses, code computes.* [self-reported]
 - [supercorp-ai/supercov](https://github.com/supercorp-ai/supercov): coverage, security and code quality for coding agents; Jev checks each source file so the agent knows what to fix first. *Unique: twelve named quality and twelve named security questions of every source file, each security check mapped to CWE classes, with files ranked for the agent next to their test coverage.* [self-reported]
+- [qkal/canny](https://github.com/qkal/canny): ledger-first agent supervision hooks for Claude Code and Codex; deterministic blockers (missing passing check, secret patterns) gate the loop while optional Jev Noul judgments advise, with `canny replay` re-reading the append-only ledger. *Unique: Jev judgments never sole-block — deterministic checks decide and Jev only advises.* [self-reported]
+- [devanshbatham/commit-miner](https://github.com/devanshbatham/commit-miner): classifies Git commit diffs and messages with Jev — bug fixes, security fixes mapped to CWEs, and change types; scans a local repo or GitHub clone and emits HTML/CSV reports with estimated Jev cost. *Unique: post-hoc corpus-wide commit classification + CWE mining, distinct from the pre-commit single-Noul valentynkit/jev-commit.* [self-reported]
 - Canonical examples: citation grounding, jailbreak and prompt-injection screening, pre-execution shell checks.
 
 ### 05 Harness
@@ -153,17 +163,20 @@ Make the agent loop cheaper, safer, and composable: Jev as the load balancer abo
 - [jexp/neo4jev](https://github.com/jexp/neo4jev): navigates a Neo4j graph one relationship at a time via a classifier over neighbouring relationships. *Unique: graph traversal as a typed decision, hop by hop.* [self-reported]
 - [xinyao27/jevonian](https://github.com/xinyao27/jevonian): Local OpenAI/Anthropic/Responses-compatible proxy where one Jev call answers both the model route and the thinking level for its `jevonian/auto` model, after code has filtered candidates by protocol, context window, effort floor, and spent quota windows; a pinned model or explicit route skips Jev entirely, and each turn is logged with the serving model, reason, token usage, and estimated cost. *Unique: the decision is a cost-and-cache one, not just a capability one, and it stays auditable.* [self-reported]
 - [suenot/codex-jev-router](https://github.com/suenot/codex-jev-router): Uses Jev Choice and Noul decisions on short task summaries to select the model and reasoning effort when Codex spawns a subagent. *Unique: installs an instruction-driven Codex subagent workflow with local confidence gates and backup/rollback.* [self-reported]
+- [hyperspaceai/jevcache](https://github.com/hyperspaceai/jevcache): local memoization plus an audit/replay ledger for Jev decisions keyed by (model, schema, state hash), with a `decide/recall/replay/serve` CLI and a local key rather than a proxy. *Unique: a local memoization-and-replay harness for decision calls, not another routing proxy.* [self-reported]
+- [reachjalil/jev-tree](https://github.com/reachjalil/jev-tree): recursive Jev Choice over a taxonomy — walks a JSON tree so thousands of leaves are selectable even though one Choice caps at 255 options, and auto-buckets oversized siblings. *Unique: directly solves the 255-option cap by recursion (default fanout 32); timeouts fail to `reason: unavailable` instead of inventing a leaf.* [self-reported]
 - Canonical examples: skill routing, context reduction, model routing.
 
 ### 06 Voice
 
 Sub-second decisions on the audio path: the youngest pillar, still mostly conceptual.
 
+- [santos-sanz/jev-audio-beeper](https://github.com/santos-sanz/jev-audio-beeper): low-latency audio-censorship POC — a Jev Boolean (`isInsult`) plus a Score (`severity`) per token identifies Spanish profanity, and matching word intervals are beeped with ffmpeg without changing duration. *Unique: a streaming audio-path decision (bounded look-ahead buffer, hysteresis, fail-open/closed as a product choice) with a JSON audit report — the first repo in the Voice pillar.* [self-reported]
 - Spoken "go back" mapped to a click in **~300 ms** (voice → action)
 - End-of-utterance and turn-taking detection via a Noul over the voice-activity signal
 - Speak-up gates for wake-word-free assistants
 
-No canonical repo has shipped yet; this is the pillar to watch.
+The first Voice repo has landed; this is still a young pillar to watch.
 
 ---
 
@@ -174,6 +187,13 @@ Rigor over reach. Everything here is tagged independent or self-reported.
 ### Independent evaluations
 
 - [largitdata: "Jev System One Model open-source benchmark"](https://www.largitdata.com/en/blog/jev-system-one-model-open-source-benchmark/): multi-turn RAG routing — Gemma 4 31B vs Jev vs open alternatives; latency advantage for Jev. `[independent]`
+- [priorbench/jev: "Independent pre-registered evaluation of Jev"](https://github.com/priorbench/jev): pre-registered run via OpenRouter — 50 predictions, 5,721 calls, 21 experiments; 95.9% zero-shot, ~430 ms floor, 0.97 confidence on random letters; raw outputs + recount script. `[independent]`
+- [decisioneval.dev: "Frozen-split evaluation of Jev 1.13.0"](https://decisioneval.dev/models/typesafe-jev/): 400 cases / 2,000 decisions — acc 0.740, Brier 0.148, ECE 0.045, abstention curves, CIs; teacher-ensemble labels. `[independent]`
+- [arXiv:2609.37647: "Evaluating and Benchmarking the System One Model Jev"](https://arxiv.org/abs/2609.37647): 37 datasets, 346,009 requests under $10; code + raw responses. `[independent]`
+- [arXiv:2609.33209: "Beyond Calibration: Do a Typed-Decision Model's Probabilities Obey the Probability Axioms?"](https://arxiv.org/abs/2609.33209): probability-axiom/coherence audit — negation/exclusivity violations, exactly at bar. `[independent]`
+- [arXiv:2610.01006: "Beyond Answer Confidence: A Controlled Audit of Self-Knowledge in a Black-Box Decision Model"](https://arxiv.org/abs/2610.01006): confidence up to 0.80 with no answer-relevant information; on post-knowledge-boundary news confidence exceeds accuracy by 0.21–0.33; an explicit "evidence suffices" question reaches AUROC 0.95 vs 0.85. `[independent]`
+- [arXiv:2609.40241: "Decision-Oriented Recommendation Reranking: An Empirical Study of Jev"](https://arxiv.org/abs/2609.40241): strong recommendation effectiveness on Amazon Reviews; more gradual latency growth than pointwise Qwen, but substantially slower than specialised recommenders. `[independent]`
+- [daf-jev](https://zenodo.org/records/22817425): Python toolkit + live-API characterization — batching ~18× speedup / ~4× fewer tokens, calibration, MCP server. `[independent]`
 
 ### Benchmark repos
 
@@ -184,6 +204,7 @@ Rigor over reach. Everything here is tagged independent or self-reported.
 - [iammrduncan/typesafe-ai-benchmark](https://github.com/iammrduncan/typesafe-ai-benchmark): Jev vs Qwen 3.8 27B on Cerebras [self-reported]
 - [vinilana/jev-eval-agent](https://github.com/vinilana/jev-eval-agent): public eval harness [self-reported]
 - [jmanhype/jev-dspy-lab](https://github.com/jmanhype/jev-dspy-lab): DSPy companion; calibration and confidence-gated abstention [self-reported]
+- [andreylukin/jev-bcp](https://github.com/andreylukin/jev-bcp): BrowseComp-Plus agent pipeline using a cheap LLM plus Jev for grading (AUC 0.94, ECE 0.045), answer checking (AUC 0.90), passage picking and trajectory selection; the `jevlog` experiment DSL and every experiment are included, null results and all (its `jevlog` DSL is unrelated to `reachjalil/jevlogs` in 02 Bulk) [self-reported]
 
 ### Open re-implementations
 
@@ -193,10 +214,10 @@ Reproducing the *interface*, not the weights: proof that the decision-layer idea
 - [vinnylarouge/jevlike](https://github.com/vinnylarouge/jevlike): one-pass scorer; Doom, chess, and Wikispeedia demos
 - [Mapika/decider](https://github.com/Mapika/decider): Qwen3.5-2B fine-tune that emits typed decisions
 - [NullPo-jp/PocketJev](https://github.com/NullPo-jp/PocketJev): on-device iPhone decisions (MLX + Qwen3-VL)
-- [Laya](https://huggingface.co/convaiinnovations/laya): Apache-2.0 open alternative, 3 checkpoints, runs on a free Colab T4 (~30 ms vs ~302 ms, 0.590 vs 0.974 accuracy)
+- [Laya](https://huggingface.co/convaiinnovations/laya): Apache-2.0 open alternative, 3 checkpoints, runs on a free Colab T4 (421M params, ModernBERT + decision head; author-reported ~35 ms, earlier listed as ~30 ms; vs ~302 ms, 0.590 vs 0.974 accuracy). [GitHub](https://github.com/NandhaKishorM/laya) · [demo](https://huggingface.co/spaces/convaiinnovations/laya-demo)
 - [com-kotobalabs/open-jev-deberta-v3-large](https://huggingface.co/com-kotobalabs/open-jev-deberta-v3-large): open reproduction on DeBERTa-v3-large (self-hostable)
 
-**Watch:** the [Jev Reproductions Tracker](https://huggingface.co/spaces/multimodalart/jev-reproductions-tracker) on Hugging Face follows every open-weight reproduction attempt.
+**Watch:** the [Jev Decision Index](https://huggingface.co/spaces/multimodalart/jev-decision-index) on Hugging Face follows every open-weight reproduction attempt.
 
 ---
 
@@ -217,7 +238,7 @@ The writing worth reading, ranked by writer popularity × content uniqueness. SE
 11. [DataCamp: "System One Models: Jev"](https://www.datacamp.com/blog/system-one-models-jev): *The eval-table explainer.*
 12. [agentjournal.dev: "One judge call, or twelve dimension scores?"](https://agentjournal.dev/blog/llm-judge-vs-feature-extraction/): *An independent methodology measurement.*
 13. [LangChain: "Building a harness with Jev"](https://www.langchain.com/blog/building-a-harness-with-jev): *A first-party harness guide from a major framework vendor.*
-14. X @CompleteSkeptic: "Jev launch announcement thread": Diogo Almeida. *Primary launch announcement (~25M views).*
+14. [X @CompleteSkeptic: "Jev launch announcement thread"](https://x.com/CompleteSkeptic/status/2099925682726002904): Diogo Almeida. *Primary launch announcement (~25M views).*
 15. [Hacker News: "TypeSafe AI launch discussion thread"](https://news.ycombinator.com/item?id=49717558): *The richest technical critique with named commenters.*
 
 ---
@@ -249,6 +270,6 @@ MIT: for the index itself. Individual projects retain their own licenses.
 
 ---
 
-**Last updated:** 22 September 2026
+**Last updated:** 3 October 2026
 
 *Jev is only a few days old. Expect this list to grow fast!!!*
